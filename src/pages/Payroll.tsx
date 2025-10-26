@@ -80,10 +80,12 @@ export default function Payroll() {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex justify-between items-start">
+    <div className="space-y-8 animate-fade-in">
+      <div className="flex justify-between items-start animate-slide-up">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight">Payroll</h1>
+          <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            Payroll
+          </h1>
           <p className="text-muted-foreground mt-2">
             Manage employees and payroll processing
           </p>

@@ -3,16 +3,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Overview() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-4xl font-bold tracking-tight">Overview</h1>
+    <div className="space-y-8 animate-fade-in">
+      <div className="animate-slide-up">
+        <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          Overview
+        </h1>
         <p className="text-muted-foreground mt-2">
           Monitor your financial operations at a glance
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Card className="border-none shadow-sm hover:shadow-md transition-shadow">
+        <Card
+          className="hover-lift animate-slide-up"
+          style={{ animationDelay: "0.1s", boxShadow: "var(--shadow-md)" }}
+        >
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-muted-foreground">
               Bank Balance

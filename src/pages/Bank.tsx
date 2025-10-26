@@ -11,7 +11,7 @@ import { Building2, ArrowUpRight, ArrowDownRight, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Bank() {
-  const [connected, _setConnected] = useState(true);
+  const [connected, setConnected] = useState(true);
 
   const transactions = [
     {
@@ -73,10 +73,12 @@ export default function Bank() {
   ];
 
   return (
-    <div className="space-y-8">
-      <div className="flex justify-between items-start">
+    <div className="space-y-8 animate-fade-in">
+      <div className="flex justify-between items-start animate-slide-up">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight">Bank Accounts</h1>
+          <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            Bank Accounts
+          </h1>
           <p className="text-muted-foreground mt-2">
             Manage your connected bank accounts and transactions
           </p>

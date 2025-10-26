@@ -57,22 +57,35 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-3xl font-bold tracking-tight">
+    <div
+      className="min-h-screen flex items-center justify-center relative overflow-hidden p-4"
+      style={{ background: "var(--gradient-primary)" }}
+    >
+      <div className="absolute inset-0 bg-background/10 backdrop-blur-3xl"></div>
+      <Card
+        className="w-full max-w-md relative z-10 animate-scale-in hover-lift"
+        style={{ boxShadow: "var(--shadow-xl)" }}
+      >
+        <CardHeader className="space-y-1 text-center pb-4">
+          <CardTitle className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent tracking-tight">
             Finovative
           </CardTitle>
-          <CardDescription>Financial Operations Platform</CardDescription>
+          <CardDescription className="text-base">
+            Financial Operations Platform
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="login">Login</TabsTrigger>
-              <TabsTrigger value="signup">Sign Up</TabsTrigger>
+              <TabsTrigger value="login" className="transition-smooth">
+                Login
+              </TabsTrigger>
+              <TabsTrigger value="signup" className="transition-smooth">
+                Sign Up
+              </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="login">
+            <TabsContent value="login" className="animate-fade-in">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="login-email">Email</Label>
@@ -82,6 +95,7 @@ export default function Auth() {
                     placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -92,15 +106,20 @@ export default function Auth() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button
+                  type="submit"
+                  className="w-full transition-smooth hover:scale-[1.02]"
+                  style={{ background: "var(--gradient-primary)" }}
+                >
                   Login
                 </Button>
               </form>
             </TabsContent>
 
-            <TabsContent value="signup">
+            <TabsContent value="signup" className="animate-fade-in">
               <form onSubmit={handleSignup} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="signup-name">Name</Label>
@@ -110,6 +129,7 @@ export default function Auth() {
                     placeholder="John Doe"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -120,6 +140,7 @@ export default function Auth() {
                     placeholder="you@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
                 <div className="space-y-2">
@@ -130,9 +151,14 @@ export default function Auth() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    className="transition-smooth focus:ring-2 focus:ring-primary/50"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button
+                  type="submit"
+                  className="w-full transition-smooth hover:scale-[1.02]"
+                  style={{ background: "var(--gradient-primary)" }}
+                >
                   Create Account
                 </Button>
               </form>
