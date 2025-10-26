@@ -11,7 +11,7 @@ import { Building2, ArrowUpRight, ArrowDownRight, Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Bank() {
-  const [connected, setConnected] = useState(true);
+  const [connected, _setConnected] = useState(true);
 
   const transactions = [
     {
