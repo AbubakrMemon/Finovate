@@ -7,6 +7,7 @@ import { DashboardLayout } from "./components/DashBoardLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Overview from "./pages/overview";
 import Bank from "./pages/Bank";
+import BankCallback from "./pages/BankCallback";
 import Payroll from "./pages/Payroll";
 import VAT from "./pages/VAT";
 import Settings from "./pages/Settings";
@@ -43,6 +44,15 @@ const App = () => (
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/bank/callback"
+            element={
+              <DashboardLayout>
+                <BankCallback />
+              </DashboardLayout>
+            }
+          />
+
           <Route
             path="/payroll"
             element={
